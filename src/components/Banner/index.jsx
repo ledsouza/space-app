@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const FigureEstilizada = styled.figure`
+const FigureEstilizada = styled.div`
     background-image: ${(props) => `url(${props.$backgroundImage})`};
     background-repeat: no-repeat;
     background-size: cover;
