@@ -11,6 +11,7 @@ const ItemListaStyle = styled.li`
     a {
         text-decoration: none;
         color: ${(props) => (props.$ativo ? "#7B78E5" : "#D9D9D9")};
+        font-family: ${(props) => (props.$ativo ? "GandhiSansBold" : "GandhiSansRegular")};
     }
 `;
 

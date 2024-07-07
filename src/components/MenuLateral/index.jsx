@@ -13,17 +13,35 @@ const MenuLateral = () => {
             <nav>
                 <ListaItensStyle>
                     <ItemLista
-                        iconeAtivo="public/icones/home-ativo.png"
-                        iconeInativo="public/icones/home-inativo.png"
+                        iconeAtivo="/icones/home-ativo.png"
+                        iconeInativo="/icones/home-inativo.png"
                         ativo={true}
                     >
                         Ínicio
                     </ItemLista>
                     <ItemLista
-                        iconeAtivo="public/icones/mais-vistas-ativo.png"
-                        iconeInativo="public/icones/mais-vistas-inativo.png"
+                        iconeAtivo="/icones/mais-vistas-ativo.png"
+                        iconeInativo="/icones/mais-vistas-inativo.png"
                     >
                         Mais vistas
+                    </ItemLista>
+                    <ItemLista
+                        iconeAtivo="/icones/mais-curtidas-ativo.png"
+                        iconeInativo="/icones/mais-curtidas-inativo.png"
+                    >
+                        Mais curtidas
+                    </ItemLista>
+                    <ItemLista
+                        iconeAtivo="/icones/novas-ativoo.png"
+                        iconeInativo="/icones/novas-inativo.png"
+                    >
+                        Novas
+                    </ItemLista>
+                    <ItemLista
+                        iconeAtivo="/icones/surpreenda-me-ativo.png"
+                        iconeInativo="/icones/surpreenda-me-inativo.png"
+                    >
+                        Surpreenda-me
                     </ItemLista>
                 </ListaItensStyle>
             </nav>
