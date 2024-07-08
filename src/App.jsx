@@ -36,6 +36,12 @@ const App = () => {
     const [fotosGaleria, setFotosGaleria] = useState(fotos);
     const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
+    const onBuscar = (valorBusca) => {
+        setFotosGaleria(
+            fotos.filter((foto) => foto.titulo.toUpperCase().includes(valorBusca.toUpperCase()))
+        );
+    };
+
     const onToggleFavorita = (foto) => {
         if (foto.id === fotoSelecionada?.id) {
             setFotoSelecionada({
@@ -57,7 +63,7 @@ const App = () => {
         <FundoGradiente>
             <EstilosGlobais />
             <AppContainer>
-                <Cabecalho />
+                <Cabecalho onBuscar={onBuscar} />
                 <MainContainer>
                     <MenuLateral />
                     <GaleriaContainer>

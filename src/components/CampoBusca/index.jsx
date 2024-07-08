@@ -15,8 +15,14 @@ const CampoBuscaStyle = styled.input`
     background-color: transparent;
 `;
 
-const CampoBusca = () => {
-    return <CampoBuscaStyle type="text" placeholder="O que você procura?" />;
+const CampoBusca = ({ onBuscar }) => {
+    return (
+        <CampoBuscaStyle
+            type="text"
+            placeholder="O que você procura?"
+            onChange={(e) => onBuscar(e.target.value)}
+        />
+    );
 };
 
 export default CampoBusca;
