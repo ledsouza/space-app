@@ -22,7 +22,7 @@ const ListaFotos = styled.ul`
     }
 `;
 
-const Galeria = ({ fotos = [] }) => {
+const Galeria = ({ fotos = [], onFotoSelecionada }) => {
     return (
         <>
             <Tags />
@@ -32,11 +32,7 @@ const Galeria = ({ fotos = [] }) => {
                     <ListaFotos>
                         {fotos.map((foto) => (
                             <li key={foto.id}>
-                                <Imagem
-                                    fotoURL={foto.path}
-                                    fotoTitulo={foto.titulo}
-                                    fotoFonte={foto.fonte}
-                                />
+                                <Imagem foto={foto} onZoom={onFotoSelecionada} />
                             </li>
                         ))}
                     </ListaFotos>

@@ -8,7 +8,7 @@ const ImagemContainer = styled.div`
 const ImagemStyle = styled.figure`
     max-width: 100%;
     height: 336px;
-    background-image: ${(props) => `url(${props.$fotoURL})`};
+    background-image: ${(props) => `url(${props.$fotoPath})`};
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -48,19 +48,24 @@ const BotoesContainer = styled.div`
     }
 `;
 
-const Imagem = ({ fotoURL, fotoTitulo, fotoFonte, expandida = false }) => {
+const Imagem = ({ foto, expandida = false, onZoom }) => {
     return (
         <ImagemContainer>
-            <ImagemStyle $fotoURL={fotoURL}></ImagemStyle>
+            <ImagemStyle $fotoPath={foto.path}></ImagemStyle>
             <ImagemCapture>
                 <TextoContainer>
-                    <ImagemTitulo>{fotoTitulo}</ImagemTitulo>
-                    <ImagemFonte>{fotoFonte}</ImagemFonte>
+                    <ImagemTitulo>{foto.titulo}</ImagemTitulo>
+                    <ImagemFonte>{foto.fonte}</ImagemFonte>
                 </TextoContainer>
                 <BotoesContainer>
                     <img src="/icones/favorito.png" alt="Favoritar" aria-hidden={expandida} />
                     {!expandida && (
-                        <img src="/icones/expandir.png" alt="Expandir" aria-hidden={expandida} />
+                        <img
+                            src="/icones/expandir.png"
+                            alt="Expandir"
+                            aria-hidden={expandida}
+                            onClick={() => onZoom(foto)}
+                        />
                     )}
                 </BotoesContainer>
             </ImagemCapture>
