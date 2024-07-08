@@ -34,14 +34,14 @@ const TagBotao = styled.button`
     }
 `;
 
-const Tags = () => {
+const Tags = ({ setTag }) => {
     return (
         <TagContainer>
             <TagTitulo>Busque por tags:</TagTitulo>
             <ListaTags>
                 {tags.map((tag) => (
                     <li key={tag.id}>
-                        <TagBotao>{tag.titulo}</TagBotao>
+                        <TagBotao onClick={() => setTag(tag.id)}>{tag.titulo}</TagBotao>
                     </li>
                 ))}
             </ListaTags>

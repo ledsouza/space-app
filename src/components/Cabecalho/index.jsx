@@ -10,11 +10,11 @@ const HeaderStyle = styled.header`
     }
 `;
 
-const Cabecalho = ({ onBuscar }) => {
+const Cabecalho = ({ setFiltro }) => {
     return (
         <HeaderStyle>
             <img src="/imagens/logo.png" alt="" />
-            <CampoBusca onBuscar={onBuscar} />
+            <CampoBusca setFiltro={setFiltro} />
         </HeaderStyle>
     );
 };

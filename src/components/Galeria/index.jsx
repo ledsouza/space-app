@@ -33,10 +33,10 @@ const ListaFotosPopulares = styled.div`
     }
 `;
 
-const Galeria = ({ fotos = [], onFotoSelecionada, onToggleFavorita }) => {
+const Galeria = ({ fotos = [], onFotoSelecionada, onToggleFavorita, setTag }) => {
     return (
         <>
-            <Tags />
+            <Tags setTag={setTag} />
             <GaleriaContainer>
                 <SecaoGaleria>
                     <Titulo>Navegue pela galeria</Titulo>

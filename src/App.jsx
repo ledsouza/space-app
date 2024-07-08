@@ -5,7 +5,7 @@ import MenuLateral from "./components/MenuLateral";
 import Banner from "./components/Banner";
 import bannerBackground from "src/assets/banner.png";
 import Galeria from "./components/Galeria";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import fotos from "src/../fotos.json";
 import ModalZoom from "./components/ModalZoom";
 import Footer from "./components/Footer";
@@ -36,12 +36,18 @@ const GaleriaContainer = styled.section`
 const App = () => {
     const [fotosGaleria, setFotosGaleria] = useState(fotos);
     const [fotoSelecionada, setFotoSelecionada] = useState(null);
+    const [filtro, setFiltro] = useState("");
+    const [tag, setTag] = useState(0);
 
-    const onBuscar = (valorBusca) => {
-        setFotosGaleria(
-            fotos.filter((foto) => foto.titulo.toUpperCase().includes(valorBusca.toUpperCase()))
-        );
-    };
+    useEffect(() => {
+        const fotosFiltradas = fotos.filter((foto) => {
+            const filtroPorTag = !tag || foto.tagId === tag;
+            const filtroPorTitulo =
+                !filtro || foto.titulo.toLowerCase().includes(filtro.toLowerCase());
+            return filtroPorTag && filtroPorTitulo;
+        });
+        setFotosGaleria(fotosFiltradas);
+    }, [filtro, tag]);
 
     const onToggleFavorita = (foto) => {
         if (foto.id === fotoSelecionada?.id) {
@@ -64,7 +70,7 @@ const App = () => {
         <FundoGradiente>
             <EstilosGlobais />
             <AppContainer>
-                <Cabecalho onBuscar={onBuscar} />
+                <Cabecalho setFiltro={setFiltro} />
                 <MainContainer>
                     <MenuLateral />
                     <GaleriaContainer>
@@ -76,6 +82,7 @@ const App = () => {
                             fotos={fotosGaleria}
                             onFotoSelecionada={(foto) => setFotoSelecionada(foto)}
                             onToggleFavorita={onToggleFavorita}
+                            setTag={setTag}
                         />
                     </GaleriaContainer>
                 </MainContainer>

@@ -15,12 +15,12 @@ const CampoBuscaStyle = styled.input`
     background-color: transparent;
 `;
 
-const CampoBusca = ({ onBuscar }) => {
+const CampoBusca = ({ setFiltro }) => {
     return (
         <CampoBuscaStyle
             type="text"
             placeholder="O que você procura?"
-            onChange={(e) => onBuscar(e.target.value)}
+            onChange={(e) => setFiltro(e.target.value)}
         />
     );
 };
