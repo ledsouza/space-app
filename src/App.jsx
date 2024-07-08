@@ -55,7 +55,7 @@ const App = () => {
                     </GaleriaContainer>
                 </MainContainer>
             </AppContainer>
-            <ModalZoom foto={fotoSelecionada} />
+            <ModalZoom foto={fotoSelecionada} onFechar={() => setFotoSelecionada(null)} />
         </FundoGradiente>
     );
 };

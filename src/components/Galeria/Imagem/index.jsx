@@ -7,7 +7,7 @@ const ImagemContainer = styled.div`
 
 const ImagemStyle = styled.figure`
     max-width: 100%;
-    height: 336px;
+    height: ${(props) => (props.$expandida ? "740px" : "336px")};
     background-image: ${(props) => `url(${props.$fotoPath})`};
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,7 +51,7 @@ const BotoesContainer = styled.div`
 const Imagem = ({ foto, expandida = false, onZoom }) => {
     return (
         <ImagemContainer>
-            <ImagemStyle $fotoPath={foto.path}></ImagemStyle>
+            <ImagemStyle $fotoPath={foto.path} $expandida={expandida}></ImagemStyle>
             <ImagemCapture>
                 <TextoContainer>
                     <ImagemTitulo>{foto.titulo}</ImagemTitulo>

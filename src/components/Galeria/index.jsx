@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Titulo from "../Titulo";
 import Tags from "./Tags";
-import Populares from "./Populares";
 import Imagem from "./Imagem";
+import Botao from "../Botao";
 
 const GaleriaContainer = styled.div`
     display: flex;
@@ -22,6 +22,17 @@ const ListaFotos = styled.ul`
     }
 `;
 
+const ListaFotosPopulares = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    img {
+        width: 212px;
+        height: 158px;
+        border-radius: 20px;
+    }
+`;
+
 const Galeria = ({ fotos = [], onFotoSelecionada }) => {
     return (
         <>
@@ -37,7 +48,13 @@ const Galeria = ({ fotos = [], onFotoSelecionada }) => {
                         ))}
                     </ListaFotos>
                 </SecaoGaleria>
-                <Populares />
+                <ListaFotosPopulares>
+                    <Titulo $alinhamento="center">Populares</Titulo>
+                    {fotos.map((foto) => (
+                        <img key={foto.id} src={foto.path} />
+                    ))}
+                    <Botao>Ver mais</Botao>
+                </ListaFotosPopulares>
             </GaleriaContainer>
         </>
     );
