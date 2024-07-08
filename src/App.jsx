@@ -36,6 +36,23 @@ const App = () => {
     const [fotosGaleria, setFotosGaleria] = useState(fotos);
     const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
+    const onToggleFavorita = (foto) => {
+        if (foto.id === fotoSelecionada?.id) {
+            setFotoSelecionada({
+                ...fotoSelecionada,
+                favorita: !fotoSelecionada.favorita,
+            });
+        }
+        setFotosGaleria(
+            fotosGaleria.map((fotoGaleria) => {
+                return {
+                    ...fotoGaleria,
+                    favorita: fotoGaleria.id === foto.id ? !foto.favorita : fotoGaleria.favorita,
+                };
+            })
+        );
+    };
+
     return (
         <FundoGradiente>
             <EstilosGlobais />
@@ -51,11 +68,16 @@ const App = () => {
                         <Galeria
                             fotos={fotosGaleria}
                             onFotoSelecionada={(foto) => setFotoSelecionada(foto)}
+                            onToggleFavorita={onToggleFavorita}
                         />
                     </GaleriaContainer>
                 </MainContainer>
             </AppContainer>
-            <ModalZoom foto={fotoSelecionada} onFechar={() => setFotoSelecionada(null)} />
+            <ModalZoom
+                foto={fotoSelecionada}
+                onFechar={() => setFotoSelecionada(null)}
+                onToggleFavorita={onToggleFavorita}
+            />
         </FundoGradiente>
     );
 };

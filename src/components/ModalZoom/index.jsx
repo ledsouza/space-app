@@ -30,13 +30,13 @@ const BotaoFechar = styled.button`
     cursor: pointer;
 `;
 
-const ModalZoom = ({ foto, onFechar }) => {
+const ModalZoom = ({ foto, onFechar, onToggleFavorita }) => {
     return (
         <>
             {foto && (
                 <Overlay>
                     <Dialog open={!!foto}>
-                        <Imagem foto={foto} expandida={true} />
+                        <Imagem foto={foto} expandida={true} onToggleFavorita={onToggleFavorita} />
                         <form method="dialog">
                             <BotaoFechar formMethod="dialog" onClick={onFechar}>
                                 <img src="/icones/fechar.png" alt="Ícone de fechar" />

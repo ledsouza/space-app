@@ -48,7 +48,9 @@ const BotoesContainer = styled.div`
     }
 `;
 
-const Imagem = ({ foto, expandida = false, onZoom }) => {
+const Imagem = ({ foto, expandida = false, onZoom, onToggleFavorita }) => {
+    const iconeFavorito = foto.favorita ? "/icones/favorito-ativo.png" : "/icones/favorito.png";
+
     return (
         <ImagemContainer>
             <ImagemStyle $fotoPath={foto.path} $expandida={expandida}></ImagemStyle>
@@ -58,7 +60,12 @@ const Imagem = ({ foto, expandida = false, onZoom }) => {
                     <ImagemFonte>{foto.fonte}</ImagemFonte>
                 </TextoContainer>
                 <BotoesContainer>
-                    <img src="/icones/favorito.png" alt="Favoritar" aria-hidden={expandida} />
+                    <img
+                        src={iconeFavorito}
+                        alt="Favoritar"
+                        aria-hidden={expandida}
+                        onClick={() => onToggleFavorita(foto)}
+                    />
                     {!expandida && (
                         <img
                             src="/icones/expandir.png"

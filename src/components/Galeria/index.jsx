@@ -33,7 +33,7 @@ const ListaFotosPopulares = styled.div`
     }
 `;
 
-const Galeria = ({ fotos = [], onFotoSelecionada }) => {
+const Galeria = ({ fotos = [], onFotoSelecionada, onToggleFavorita }) => {
     return (
         <>
             <Tags />
@@ -43,7 +43,11 @@ const Galeria = ({ fotos = [], onFotoSelecionada }) => {
                     <ListaFotos>
                         {fotos.map((foto) => (
                             <li key={foto.id}>
-                                <Imagem foto={foto} onZoom={onFotoSelecionada} />
+                                <Imagem
+                                    foto={foto}
+                                    onZoom={onFotoSelecionada}
+                                    onToggleFavorita={onToggleFavorita}
+                                />
                             </li>
                         ))}
                     </ListaFotos>
