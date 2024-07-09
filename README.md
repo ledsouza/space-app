@@ -1,8 +1,32 @@
-# React + Vite
+# SpaceApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Static Badge](https://img.shields.io/badge/Status-Finalizado-green)
 
-Currently, two official plugins are available:
+Uma aplicação de galeria de imagens espaciais desenvolvida com React e Styled Components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias utilizadas:
+
+* React
+* Styled Components
+* HTML
+* CSS
+* JavaScript
+
+## Descrição detalhada:
+
+Este projeto foi desenvolvido durante o curso de Styled Components da Alura, na escola de Frontend. O objetivo principal era colocar em prática os conhecimentos adquiridos sobre Styled Components na construção de interfaces com React.
+
+A aplicação SpaceApp simula uma galeria de imagens espaciais, exibindo fotos de planetas, estrelas, galáxias e outros corpos celestes. Atualmente, o projeto consiste em uma única página, com um layout responsivo para desktop.
+
+**Funcionalidades:**
+
+* **Header:** Barra de navegação com logo e campo de pesquisa.
+* **Menu Lateral:** Menu com links para diferentes seções da galeria (ainda não funcionais).
+* **Banner:** Seção de destaque com um título e imagem de fundo.
+* **Galeria:** Grid de imagens com sistema de tags para filtrar o conteúdo.
+* **Seção "Populares":** Exibe as imagens mais populares da galeria (ainda não funcional).
+* **Rodapé:** Contém informações sobre direitos autorais e mídia social.
+
+**Contribuições:**
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues, enviar pull requests ou sugerir melhorias.
