@@ -4,6 +4,8 @@
 
 Uma aplicação de galeria de imagens espaciais desenvolvida com React e Styled Components.
 
+<img width="1680" alt="image" src="https://github.com/ledsouza/space-app/assets/56280624/620272a0-3c71-4e29-942d-b41b99eeda08">
+
 ## Tecnologias utilizadas:
 
 * React
